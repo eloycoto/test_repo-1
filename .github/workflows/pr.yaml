@@ -20,8 +20,8 @@ jobs:
       - name: "find"
         run: find .
 
-      # - name: "call-workflow-in-local-repo"
-      #   uses: "./.github/workflows/test.yml"
+      - name: "call-workflow-in-local-repo"
+        uses: "/home/runner/work/test_repo/test_repo/.github/workflows/test.yaml"
   mycustomWorkflow:
     runs-on: ubuntu-latest
     steps:
