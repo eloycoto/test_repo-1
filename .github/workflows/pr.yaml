@@ -38,7 +38,7 @@ jobs:
         run: 'echo "::warning file=test,line=1,col=1,endColumn=2::INVALID THING"'
 
       - id: "coverage"
-        run: echo "::set-output coverage=10"
+        run: echo "::set-output name=coverage::10"
   job3:
     runs-on: ubuntu-latest
     name: "Coverage ${{ needs.test.outputs.coverage }} "
