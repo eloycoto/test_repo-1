@@ -19,8 +19,8 @@ jobs:
       - name: "find"
         run: find .
 
-      - name: "call-workflow"
-        uses: ./.github/workflows/test.yaml
+      - name: "workflow"
+        uses: "./.github/workflows/test.yaml"
 
       - name: Run the action
         uses: Sibz/github-status-action@v1
