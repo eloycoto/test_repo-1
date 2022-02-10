@@ -2,8 +2,7 @@ name: "test"
 description: "test"
 on:
   workflow_call: 
-
-runs:
-  using: "composite"
-  steps:
-    - run: ls
+jobs:
+  build:
+    steps:
+      - run: ls
