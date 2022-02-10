@@ -41,7 +41,7 @@ jobs:
       - name: "DATA"
         id: coverage
         run: echo "::set-output coverage=10"
-  job2:
+  job3:
     runs-on: ubuntu-latest
     name: "Coverage ${{ needs.test.outputs.coverage }} "
     needs: test
