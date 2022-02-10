@@ -21,14 +21,11 @@ jobs:
         run: find .
 
       - name: "call-workflow-in-local-repo"
-        uses: "/home/runner/work/test_repo/test_repo/.github/workflows/test.yaml@${{ github.event.pull_request.head.sha }}"
+        uses: /home/runner/work/test_repo/test_repo/.github/workflows/test.yaml@${{ github.event.pull_request.head.sha }}
   mycustomWorkflow:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: "./.github/workflows/test.yml"
+    test:
+      - uses: ./.github/workflows/test.yml@1
 # jobs:
 #   test: # make sure the action works on a clean machine without building
 #     runs-on: ubuntu-latest
