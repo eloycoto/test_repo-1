@@ -23,6 +23,7 @@ jobs:
       # - name: "call-workflow-in-local-repo"
       #   uses: "./.github/workflows/test.yml"
   mycustomWorkflow:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
