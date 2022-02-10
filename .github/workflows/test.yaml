@@ -4,4 +4,4 @@ description: "test"
 runs:
   using: "composite"
   steps: 
-		- run: "ls -la -1"
+	- run: "ls -la -1"
