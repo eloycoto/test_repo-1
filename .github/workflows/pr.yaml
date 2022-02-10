@@ -8,9 +8,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: A job to say hello
-    jobs:
-      - name: "workflow"
-        uses: "./.github/workflows/test.yml"
+    mycustomWorkflow:
+      uses: "./.github/workflows/test.yml"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
