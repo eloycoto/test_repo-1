@@ -1,4 +1,4 @@
-name: "test"
+name: "GO"
 on:
   pull_request:
   push:
@@ -19,40 +19,3 @@ jobs:
 
       - name: "find"
         run: find .
-
-      - name: "call-workflow-in-local-repo"
-        uses: /home/runner/work/test_repo/test_repo/.github/workflows/test.yaml@${{ github.event.pull_request.head.sha }}
-  mycustomWorkflow:
-    runs-on: ubuntu-latest
-    test:
-      - uses:  project-flotta/test_repo/.github/workflows/test.yml@${{ github.event.pull_request.head.sha }}
-
-# jobs:
-#   test: # make sure the action works on a clean machine without building
-#     runs-on: ubuntu-latest
-#     jobs:
-#       - name: "workflow"
-#         uses: "./.github/workflows/test.yml"
-    #steps:
-    #  - name: Checkout
-    #    uses: actions/checkout@v2
-    #    # with:
-    #    #   ref: ${{ github.event.pull_request.head.sha }}
-    #    #
-    #  - name: "pwd"
-    #    run: pwd
-
-    #  - name: "find"
-    #    run: find .
-
-    #  - name: "workflow"
-    #    uses: "project-flotta/test_repo/.github/workflows/test.yml@1"
-
-    #  - name: Run the action
-    #    uses: Sibz/github-status-action@v1
-    #    with:
-    #      authToken: ${{secrets.GITHUB_TOKEN}}
-    #      context: 'Test run'
-    #      description: 'Passed'
-    #      state: 'success'
-    #      sha: ${{github.event.pull_request.head.sha || github.sha}}

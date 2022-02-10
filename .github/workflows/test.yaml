@@ -1,8 +1,12 @@
 name: "test"
 description: "test"
 on:
-  workflow_call: 
+  workflow_run:
+    workflows: ["GO"]
+    types:
+      - completed
 jobs:
   build:
     steps:
       - run: ls
+
