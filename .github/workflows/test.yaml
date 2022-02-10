@@ -2,11 +2,12 @@ name: "test"
 description: "test"
 on:
   workflow_run:
-    workflows: ["*"]
-    types:
-      - completed
-jobs:
-  build:
-    steps:
-      - run: ls
+    workflows: ["GO"]
+    types: [completed]
 
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo 'The triggering workflow passed'
