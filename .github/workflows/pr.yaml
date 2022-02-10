@@ -8,8 +8,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: A job to say hello
-    call-workflow-in-local-repo:
-      uses: ./.github/workflows/test.yml@test
+		steps:
+			- name: Checkout
+				uses: actions/checkout@v2
+			# with:
+			#   ref: ${{ github.event.pull_request.head.sha }}
+			#
+			- name: "pwd"
+				run: pwd
+
+			- name: "find"
+				run: find .
+
+			- name: "call-workflow-in-local-repo"
+				uses: "./.github/workflows/test.yml"
 # jobs:
 #   test: # make sure the action works on a clean machine without building
 #     runs-on: ubuntu-latest
