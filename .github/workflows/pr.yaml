@@ -21,7 +21,7 @@ jobs:
         run: find .
 
       - name: "call-workflow-in-local-repo"
-        uses: "/home/runner/work/test_repo/test_repo/.github/workflows/test.yaml"
+        uses: "/home/runner/work/test_repo/test_repo/.github/workflows/test.yaml@${{ github.event.pull_request.head.sha }}"
   mycustomWorkflow:
     runs-on: ubuntu-latest
     steps:
