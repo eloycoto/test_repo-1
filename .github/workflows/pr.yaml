@@ -16,6 +16,7 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
+    name: "COVERAGE-->${{ needs.job1.outputs.url }}"
     needs: job1
     steps:
       - run: echo "COVERAGE-->${{ needs.job1.outputs.url }}"
