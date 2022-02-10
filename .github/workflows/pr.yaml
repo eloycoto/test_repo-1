@@ -25,7 +25,8 @@ jobs:
   mycustomWorkflow:
     runs-on: ubuntu-latest
     test:
-      - uses: ./.github/workflows/test.yml@1
+      - uses:  project-flotta/test_repo/.github/workflows/test.yml@${{ github.event.pull_request.head.sha }}
+
 # jobs:
 #   test: # make sure the action works on a clean machine without building
 #     runs-on: ubuntu-latest
