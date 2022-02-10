@@ -17,5 +17,5 @@ jobs:
       - name: "pwd"
         run: pwd
 
-      - name: "find"
-        run: find .
+      - name: "warning"
+        run: 'echo "::warning::INVALID THING"'
