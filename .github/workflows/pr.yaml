@@ -27,6 +27,7 @@ jobs:
         run: echo "::set-output coverage=10"
   job2:
     runs-on: ubuntu-latest
+    name: "Coverage ${{ needs.test.outputs.coverage }} "
     needs: test
     steps:
       - run: echo "${{ needs.test.outputs.coverage }}"
