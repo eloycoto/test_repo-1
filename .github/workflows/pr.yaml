@@ -10,26 +10,26 @@ jobs:
     jobs:
       - name: "workflow"
         uses: "project-flotta/test_repo/.github/workflows/test.yml@1"
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        # with:
-        #   ref: ${{ github.event.pull_request.head.sha }}
-        #
-      - name: "pwd"
-        run: pwd
+    #steps:
+    #  - name: Checkout
+    #    uses: actions/checkout@v2
+    #    # with:
+    #    #   ref: ${{ github.event.pull_request.head.sha }}
+    #    #
+    #  - name: "pwd"
+    #    run: pwd
 
-      - name: "find"
-        run: find .
+    #  - name: "find"
+    #    run: find .
 
-      - name: "workflow"
-        uses: "project-flotta/test_repo/.github/workflows/test.yml@1"
+    #  - name: "workflow"
+    #    uses: "project-flotta/test_repo/.github/workflows/test.yml@1"
 
-      - name: Run the action
-        uses: Sibz/github-status-action@v1
-        with:
-          authToken: ${{secrets.GITHUB_TOKEN}}
-          context: 'Test run'
-          description: 'Passed'
-          state: 'success'
-          sha: ${{github.event.pull_request.head.sha || github.sha}}
+    #  - name: Run the action
+    #    uses: Sibz/github-status-action@v1
+    #    with:
+    #      authToken: ${{secrets.GITHUB_TOKEN}}
+    #      context: 'Test run'
+    #      description: 'Passed'
+    #      state: 'success'
+    #      sha: ${{github.event.pull_request.head.sha || github.sha}}
