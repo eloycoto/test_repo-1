@@ -1,11 +1,10 @@
 name: "test"
-on: workflow_call
+description: "test"
 
-jobs:
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+runs:
+  using: "composite"
+  steps: 
+		- name: Checkout
+			uses: actions/checkout@v2
 
-      - run: "ls -la -1"
+		- run: "ls -la -1"
