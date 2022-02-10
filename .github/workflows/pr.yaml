@@ -13,8 +13,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - call-test:
-        uses: ./.github/workflows/test
+      - call-workflow-2-in-local-repo:
+        uses: ./.github/workflows/test.yaml
 
       - name: Run the action
         uses: Sibz/github-status-action@v1
