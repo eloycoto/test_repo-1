@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     call-workflow-in-local-repo:
-      uses: ./.github/workflows/test.yml
+      uses: ./.github/workflows/test.yml@test
 # jobs:
 #   test: # make sure the action works on a clean machine without building
 #     runs-on: ubuntu-latest
