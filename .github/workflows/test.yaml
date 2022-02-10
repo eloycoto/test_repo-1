@@ -1,0 +1,11 @@
+name: "build"
+on: workflow_call
+
+jobs:
+  test: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - run: "ls -la -1"
