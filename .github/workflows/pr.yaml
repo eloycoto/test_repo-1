@@ -37,12 +37,11 @@ jobs:
       - name: "warning"
         run: 'echo "::warning file=test,line=1,col=1,endColumn=2::INVALID THING"'
 
-      - name: "DATA"
-        id: coverage
+      - id: "coverage"
         run: echo "::set-output coverage=10"
   job3:
     runs-on: ubuntu-latest
     name: "Coverage ${{ needs.test.outputs.coverage }} "
     needs: test
     steps:
-      - run: echo "${{ needs.test.outputs.coverage }}"
+      - run: "echo COVER-->${{ needs.test.outputs.coverage }}"
