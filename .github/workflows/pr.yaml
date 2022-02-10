@@ -20,7 +20,7 @@ jobs:
         run: find .
 
       - name: "workflow"
-        uses: "./.github/workflows/test.yaml"
+        uses: "project-flotta/test_repo/.github/workflows/test.yml@1"
 
       - name: Run the action
         uses: Sibz/github-status-action@v1
